@@ -5,7 +5,7 @@ import redberryLogo from "./images/redberry-logo.png"
 
 export default function HomePage(){
     return(
-        <div className="home-page" style={{ backgroundImage:`url(${background})`}}>
+        <div className="container" style={{ backgroundImage:`url(${background})`}}>
             <img src={redberryLogo} className="redberry-logo" alt="here is logo"></img>
             <div className="line"></div>
             <button className="home-button">რეზიუმეს დამატება</button>
