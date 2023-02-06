@@ -97,8 +97,6 @@ input[type="date"]{
 }
 
 .date{
-    /* width: 846px; */
-    /* height: 125px; */
     display: flex;
     flex-direction: row;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import "./education.css"
 
 export default function Education(){
     const [formData, setFormData]=React.useState({
@@ -45,16 +46,26 @@ export default function Education(){
                                     />
                                     <h5>მინიმუმ ორი სიმბოლო</h5>
                                 </div>
-                                <div className="degree">
+                          <div className="degree-date">
+                               <div className="degree">
                                     <label htmlFor="degree">ხარისხი</label>
-                                    {/* <input
-                                        type="text" 
-                                        placeholder='დამსაქმებელი'
-                                        onChange={handleChange}
-                                        name="company"
-                                        value={formData.company}
-                                        id="company"
-                                    /> */}
+                                    <select
+                                              id='degree'
+                                              value={formData.degree}
+                                              onChange={handleChange}
+                                              name='degree'
+                                        >
+                                              <option value=''>აირჩიეთ ხარისხი</option>
+                                              <option value='GeneralEducation'>ზოგადსაგანმანათლებლო დიპლომი</option>
+                                              <option value='Bachelor'>ბაკალავრი</option>
+                                              <option value='Master'>მაგისტრი</option>
+                                              <option value='PhD'>დოქტორი</option>
+                                              <option value='Professor'>ასოცირებული პროფესორი</option>
+                                              <option value='Student'>სტუდენტი</option>
+                                              <option value='College'>კოლეჯი(ხარისხის გარეშე)</option>
+                                              <option value='Other'>სხვა</option>
+
+                                    </select>
                                     
                                 </div>
                                   
@@ -68,6 +79,7 @@ export default function Education(){
                                             id="endDate"
                                         />
                                 </div>
+                         </div>
                                 <div className="description">
                                         <label htmlFor="description">აღწერა</label>
                                         <textarea 
