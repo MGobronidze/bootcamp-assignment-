@@ -2,6 +2,7 @@ import React from "react";
 import background from "./images/background-image.png";
 import logo from "./images/LOGO.png"
 import redberryLogo from "./images/redberry-logo.png"
+import "./homepage.css"
 
 export default function HomePage(){
     return(

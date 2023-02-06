@@ -1,4 +1,5 @@
 import React from "react";
+import './priviteinfo.css'
 
 export default function PriviteInfo(){
     const [formData, setFormData]=React.useState({

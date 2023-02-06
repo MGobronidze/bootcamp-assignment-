@@ -1,4 +1,5 @@
 import React from "react";
+import "./experience.css"
 
 export default function Experience(){
     const [formData, setFormData]=React.useState({
@@ -60,7 +61,7 @@ export default function Experience(){
                                     />
                                     <h5>მინიმუმ ორი სიმბოლო</h5>
                                 </div>
-                                
+                        <div className='date'>        
                                 <div className="start-date">
                                         <label htmlFor="startDate">დაწყების თარიღი</label>
                                         <input 
@@ -83,6 +84,7 @@ export default function Experience(){
                                             id="endDate"
                                         />
                                 </div>
+                        </div>    
                                 
                                 <div className="description">
                                         <label htmlFor="description">აღწერა</label>

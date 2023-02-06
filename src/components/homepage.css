@@ -1,0 +1,52 @@
+.container{
+    margin: 0px;
+    padding: 0px;
+    height: 1080px;
+    width: 1920px;
+   }
+  .redberry-logo{
+    position: absolute;
+    top: 70px;
+    left: 25px;
+    top: 25px;
+    left: 70px;
+    width: 236px;
+    height: 38px;
+  }
+  
+  .home-button{
+    color: #FFFFFF;
+    font-size: 20px;
+    width: 464px;
+    height: 60px;  
+    border-radius: 8px;
+    background-color: #1A1A1A;
+    position: absolute;
+    top: 513px;
+    left: 728px;
+    cursor: pointer;
+  }
+  .home-page-logo{
+    width: 299px;
+    height: 299px;
+    position: absolute;
+    top: 473px;
+    left: 1076px;
+  }
+  .line{
+    width: 1780px;
+    background-color: #1A1A1A;
+    height: 1px;
+    position: absolute;
+    top: 89px;
+    left: 70px;
+  }
+  .header{
+    position: absolute;
+    height: 29px;
+    left: 149px;
+    font-size: 24px;
+    top: 35px;
+    
+  }
+  
