@@ -1,5 +1,21 @@
+h1{
+  position: absolute;
+  height: 29px;
+  width: 153px;
+  left: 149px;
+  top: 47px;
+  font-family: Helvetica Neue;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+
 
 .line-header{
+  margin-top: 8px;
   position: absolute;
   width: 798.000000000003px;
   left: 150px;
