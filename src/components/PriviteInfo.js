@@ -35,7 +35,7 @@ export default function PriviteInfo(){
         <div className="container">
             <div className="form">
                 <Link to={'/'}> <img src={arrow} className="arrow" alt="here is arrow cklick to go to the first page"></img></Link>
-                <h1 className="header">პირადი ინფო</h1>
+                <h1 className="priv-header">პირადი ინფო</h1>
                 <p className="page-number">1/3</p>
                 <div className="line-header"></div>
                 <form onSubmit={handleSubmit}>
@@ -43,7 +43,7 @@ export default function PriviteInfo(){
                                 <div className="name">
                                     <label htmlFor="name">სახელი</label>
                                     <input
-                                        type="text"
+                                        type="text-priv"
                                         placeholder='სახელი'
                                         onChange={handleChange}
                                         name="firstName"
@@ -56,7 +56,7 @@ export default function PriviteInfo(){
                                 <div className="surname">
                                     <label htmlFor="surname">გვარი</label>
                                     <input
-                                        type="text" 
+                                        type="text-priv" 
                                         placeholder='გვარი'
                                         onChange={handleChange}
                                         name="lastName"

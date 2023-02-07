@@ -1,15 +1,15 @@
-h1{
+.priv-header{
   position: absolute;
   height: 29px;
-  width: 153px;
+  width: 179px;
   left: 149px;
   top: 47px;
   font-family: Helvetica Neue;
   font-size: 24px;
   font-weight: 700;
   line-height: 29px;
-  letter-spacing: 0em;
   text-align: left;
+  
 }
 
   /* form styling */
@@ -22,38 +22,25 @@ h1{
     display: flex;
     flex-direction: row;
   }
-  .name{
+  .name, .surname{
     height: 122px;
-    width: 419px;
+    width: 372px;
     border-radius: 0px;
     padding: 8px 24px 8px 24px;
-    background-color: #0E80BF;
-  
+    display: flex;
+    flex-direction: column;
   }
-  .surname{
-    height: 122px;
-    width: 419px;
-    position: absolute;
-    left: 427px;
-    border-radius: 0px;
-    padding: 8px 24px 8px 24px;  
-  
-  }
-  
-  input[type="text"] {
-    
+
+  input[type="text-priv"] {
     height: 48px;
     width: 371px;
+    left: 24px;
     top: 37px;
     border-radius: 4px;
-    right: 32px;
-    background-color: #FFFFFF;
-    color: #BCBCBC;
-    margin-top: 8px;
-    border: 1px solid #BCBCBC; 
+    border: 1px solid #BCBCBC;
     text-indent: 16px;
-  
-  }
+    
+ }
   
   h5{
     height: 21px;
@@ -106,7 +93,7 @@ h1{
   }
   ::placeholder{
     height: 21px;
-    width: 339px;
+    width: 500px;
     font-family: Helvetica Neue;
     font-size: 16px;
     font-weight: 400;

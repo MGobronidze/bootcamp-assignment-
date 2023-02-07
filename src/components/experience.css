@@ -35,7 +35,7 @@ h1{
     height: 21px;
     font-family: Helvetica Neue;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 400px;
     line-height: 21px;
     padding: 16px 13px 16px 0px;
     color: rgba(0, 0, 0, 0.6);
@@ -111,7 +111,7 @@ input[type="date"]{
     flex-direction: column;
 }
 
-.description{
+.description-exp{
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -131,7 +131,7 @@ textarea{
     text-indent: 16px;
     
 }
-.line-bottom{ 
+.line-bottom-exp{ 
     position: absolute;
     left: 150px;
     top: 821px;
@@ -140,4 +140,22 @@ textarea{
     border-radius: 0px;
     border: 1px solid #C1C1C1
   
+  }
+
+  .btn-add-exp{
+    position: absolute;
+    height: 48px;
+    width: 289px;
+    left: 149px;
+    top: 866px;
+    border-radius: 4px;
+    background: #62A1EB;
+    border: none;
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+    color: #FFFFFF;
+    padding: 14px 21px;
+    cursor: pointer;
   }

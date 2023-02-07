@@ -90,7 +90,7 @@ export default function Experience(){
                                 </div>
                         </div>    
                                 
-                                <div className="description">
+                                <div className="description-exp">
                                         <label htmlFor="description">აღწერა</label>
                                         <textarea 
                                             placeholder='როლი თანამდებობდაზე და ზოგადი აღწერა'
@@ -103,8 +103,8 @@ export default function Experience(){
                         
                 </form>
 
-                <div className="line-bottom"></div>
-                <button className="btn-add">მეტი გამოცდილების დამატება</button>
+                <div className="line-bottom-exp"></div>
+                <button className="btn-add-exp">მეტი გამოცდილების დამატება</button>
                 <Link to={'/PriviteInfo'}><button className="btn-back">უკან</button></Link>
                 <Link to={'/Education'}><button className="btn-next">შემდეგი</button></Link>
 

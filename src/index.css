@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: hsl(0, 16%, 94%);
+  background-color:#F9F9F9;
 }
 
 code {
@@ -15,7 +15,6 @@ code {
 
   }
   
-
   .resume{
     position: absolute;
     height: 1080px;
@@ -74,13 +73,14 @@ code {
     left: 150px;
     top: 88px;
     border-radius: 0px;
-    border: 1px solid #1A1A1A    
+    border: 1px solid #1A1A1A;
+    margin-top: 12px; 
   }
 .page-number{
   height: 24px;
   width: 29px;
   left: 920px;
-  top: 34px;
+  top: 46px;
   font-family: Helvetica Neue;
   font-size: 20px;
   font-weight: 400;
@@ -94,8 +94,8 @@ code {
   position: absolute;
   height: 40px;
   width: 40px;
-  left: 48px;
-  top: 45px;
+  left: 60px;
+  top: 60px;
   border-radius: 0px;
 }
 
