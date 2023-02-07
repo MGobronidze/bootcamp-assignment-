@@ -1,7 +1,8 @@
 import React from "react";
 import './priviteinfo.css';
 import { Link } from "react-router-dom";
-import arrow from "./images/arrow.png"
+import arrow from "./images/arrow.png";
+import logo from "./images/resume-logo.png";
 
 export default function PriviteInfo(){
     const [formData, setFormData]=React.useState({
@@ -124,7 +125,7 @@ export default function PriviteInfo(){
 
             </div>
             <div className="resume">
-
+            <img src={logo} className="logo" alt="here is logo"></img>
             </div>
         </div>
 

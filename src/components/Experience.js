@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./experience.css";
-import arrow from './images/arrow.png'
+import arrow from './images/arrow.png';
+import logo from "./images/resume-logo.png";
 
 export default function Experience(){
     const [formData, setFormData]=React.useState({
@@ -111,7 +112,7 @@ export default function Experience(){
             </div>
 
             <div className="resume">
-
+            <img src={logo} className="logo" alt="here is logo"></img>
             </div>
         </div>
 

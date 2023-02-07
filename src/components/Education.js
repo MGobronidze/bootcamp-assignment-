@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./education.css";
-import arrow from './images/arrow.png'
+import arrow from './images/arrow.png';
+import logo from "./images/resume-logo.png";
 
 
 export default function Education(){
@@ -105,7 +106,7 @@ export default function Education(){
             </div>
 
             <div className="resume">
-
+            <img src={logo} className="logo" alt="here is logo"></img>
             </div>
         </div>
 
