@@ -6,13 +6,16 @@ import logo from "./images/resume-logo.png";
 
 
 export default function Education(){
-    const [formData, setFormData]=React.useState({
+    
+    const [formData, setFormData]=React.useState(JSON.parse(localStorage.getItem("formData"))||{
         school:"",
         degree:"",
         endDate: "",
         description:""
       })
-    
+React.useEffect(()=>{
+        localStorage.setItem('formData', JSON.stringify(formData))
+}, [formData]);
      
      
     function handleChange(event){
@@ -35,12 +38,12 @@ export default function Education(){
         <div className="container">
             <div className="form">
                 <Link to={'/'}> <img src={arrow} className="arrow" alt="here is arrow cklick to go to the first page"></img></Link>
-                <h1 className="header">განათლება</h1>
+                <h1 className="title">განათლება</h1>
                 <p className="page-number">3/3</p>
                 <div className="line-header"></div>
                 <form onSubmit={handleSubmit}>
                                 <div className="school">
-                                    <label htmlDor="school">სასწავლებელი</label>
+                                    <label htmlFor="school">სასწავლებელი</label>
                                     <input
                                         type="text"
                                         placeholder='სასწავლებელი'
@@ -100,14 +103,14 @@ export default function Education(){
 
                 <div className="line-bottom"></div>
                 <button className="btn-add">მეტი გამოცდილების დამატება</button>
-               <Link to={'/Experience'}> <button className="btn-back">უკან</button></Link>
-               <Link to={'/Resume'}> <button className="btn-next">შემდეგი</button></Link>
+                <Link to={'/Experience'}> <button className="btn-back">უკან</button></Link>
+                <Link to={'/Resume'}> <button className="btn-next">შემდეგი</button></Link>
 
             </div>
 
-            <div className="resume">
-            <img src={logo} className="logo" alt="here is logo"></img>
-            </div>
+                <div className="resume">
+                    <img src={logo} className="logo" alt="here is logo"></img>
+                </div>
         </div>
 
     )

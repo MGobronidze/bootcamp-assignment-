@@ -5,14 +5,17 @@ import arrow from './images/arrow.png';
 import logo from "./images/resume-logo.png";
 
 export default function Experience(){
-    const [formData, setFormData]=React.useState({
+    const [formData, setFormData]=React.useState(JSON.parse(localStorage.getItem("formData"))||{
         position:"",
         company:"",
         startDate: "",
         endDate: "",
-        description:""
+        descriptionExp:""
       })
     
+React.useEffect(()=>{
+        localStorage.setItem('formData', JSON.stringify(formData))
+}, [formData]);
      
      
     function handleChange(event){
@@ -22,6 +25,7 @@ export default function Experience(){
           return{
             ...prevData,
             [name]:value
+
           }
         }
       )
@@ -35,13 +39,13 @@ export default function Experience(){
         <div className="container">
             <div className="form">
                 <Link to={'/'}> <img src={arrow} className="arrow" alt="here is arrow cklick to go to the first page"></img></Link>
-                <h1 className="header">გამოცდილება</h1>
-                <p className="page-number">3/3</p>
+                <h1 className="title">გამოცდილება</h1>
+                <p className="page-number">2/3</p>
                 <div className="line-header"></div>
                 <form onSubmit={handleSubmit}>
                                 
                                 <div className="position">
-                                    <label htmlDor="position">თანამდებობდა</label>
+                                    <label htmlFor="position">თანამდებობდა</label>
                                     <input
                                         type="text"
                                         placeholder='დეველოპერი, დიზაინერი, ა.შ.'
@@ -92,13 +96,13 @@ export default function Experience(){
                         </div>    
                                 
                                 <div className="description-exp">
-                                        <label htmlFor="description">აღწერა</label>
+                                        <label htmlFor="descriptionExp">აღწერა</label>
                                         <textarea 
                                             placeholder='როლი თანამდებობდაზე და ზოგადი აღწერა'
                                             onChange={handleChange}
-                                            name="description"
-                                            value ={formData.description}
-                                            id="description"
+                                            name="descriptionExp"
+                                            value ={formData.descriptionExp}
+                                            id="descriptionExp"
                                         />
                                 </div>
                         

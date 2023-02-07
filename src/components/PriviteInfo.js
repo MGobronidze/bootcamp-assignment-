@@ -1,11 +1,11 @@
 import React from "react";
 import './priviteinfo.css';
-import { Link } from "react-router-dom";
+import {Link } from "react-router-dom";
 import arrow from "./images/arrow.png";
 import logo from "./images/resume-logo.png";
 
 export default function PriviteInfo(){
-    const [formData, setFormData]=React.useState({
+    const [formData, setFormData] = React.useState(JSON.parse(localStorage.getItem("formData"))||{
         firstName:"",
         lastName:"",
         image: "",
@@ -13,9 +13,17 @@ export default function PriviteInfo(){
         email:"",
         mobile:""
       })
-    
-     
-     
+
+    function handleClick(){
+      localStorage.clear()
+    }
+  
+
+React.useEffect(()=>{
+  localStorage.setItem('formData', JSON.stringify(formData))
+}, [formData]);
+ 
+
     function handleChange(event){
       const {name, value}=event.target    
       setFormData(
@@ -35,8 +43,8 @@ export default function PriviteInfo(){
     return(
         <div className="container">
             <div className="form">
-                <Link to={'/'}> <img src={arrow} className="arrow" alt="here is arrow cklick to go to the first page"></img></Link>
-                <h1 className="priv-header">პირადი ინფო</h1>
+                <Link to={'/'} onClick={handleClick}> <img src={arrow} className="arrow" alt="here is arrow cklick to go to the first page"></img></Link>
+                <h1 className="title">პირადი ინფო</h1>
                 <p className="page-number">1/3</p>
                 <div className="line-header"></div>
                 <form onSubmit={handleSubmit}>
@@ -87,7 +95,7 @@ export default function PriviteInfo(){
                                             placeholder='ზოგადი ინფორმაცია შენს შესახებ'
                                             onChange={handleChange}
                                             name="aboutMe"
-                                            value ={formData.comments}
+                                            value ={formData.aboutMe}
                                             id="about"
                                         />
                                 </div>
@@ -119,9 +127,10 @@ export default function PriviteInfo(){
                                         <h5 className="restriction"> უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს</h5>
 
                                 </div>
+                                
                         </div>
                 </form>
-               <Link to={'/Experience'}> <button className="btn-next">შემდეგი</button> </Link>
+               <Link to={'/Experience'}> <button className="btn-next" >შემდეგი</button> </Link>
 
             </div>
             <div className="resume">
