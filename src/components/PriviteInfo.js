@@ -1,5 +1,7 @@
 import React from "react";
-import './priviteinfo.css'
+import './priviteinfo.css';
+import { Link } from "react-router-dom";
+import arrow from "./images/arrow.png"
 
 export default function PriviteInfo(){
     const [formData, setFormData]=React.useState({
@@ -32,7 +34,9 @@ export default function PriviteInfo(){
     return(
         <div className="container">
             <div className="form">
+                <Link to={'/'}> <img src={arrow} className="arrow" alt="here is arrow cklick to go to the first page"></img></Link>
                 <h1 className="header">პირადი ინფო</h1>
+                <p className="page-number">1/3</p>
                 <div className="line-header"></div>
                 <form onSubmit={handleSubmit}>
                         <div className="ful-name">
@@ -74,7 +78,7 @@ export default function PriviteInfo(){
                                             style={{display: 'none'}}
                                             id="image"
                                         />
-                                        <button className="image-upload">ატვირთვა</button>
+                                        <button className="image-upload" >ატვირთვა</button>
                                 </div>
                                 <div className="about-me">
                                         <label htmlFor="about">ჩემს შესახებ (არასავალდებულო)</label>
@@ -116,7 +120,7 @@ export default function PriviteInfo(){
                                 </div>
                         </div>
                 </form>
-                <button className="btn-next">შემდეგი</button>
+               <Link to={'/Experience'}> <button className="btn-next">შემდეგი</button> </Link>
 
             </div>
             <div className="resume">

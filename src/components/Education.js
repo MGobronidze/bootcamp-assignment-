@@ -1,5 +1,8 @@
 import React from "react";
-import "./education.css"
+import { Link } from "react-router-dom";
+import "./education.css";
+import arrow from './images/arrow.png'
+
 
 export default function Education(){
     const [formData, setFormData]=React.useState({
@@ -30,7 +33,9 @@ export default function Education(){
     return(
         <div className="container">
             <div className="form">
+                <Link to={'/'}> <img src={arrow} className="arrow" alt="here is arrow cklick to go to the first page"></img></Link>
                 <h1 className="header">განათლება</h1>
+                <p className="page-number">3/3</p>
                 <div className="line-header"></div>
                 <form onSubmit={handleSubmit}>
                                 <div className="school">
@@ -94,8 +99,8 @@ export default function Education(){
 
                 <div className="line-bottom"></div>
                 <button className="btn-add">მეტი გამოცდილების დამატება</button>
-                <button className="btn-back">უკან</button>
-                <button className="btn-next">შემდეგი</button>
+               <Link to={'/Experience'}> <button className="btn-back">უკან</button></Link>
+               <Link to={'/Resume'}> <button className="btn-next">შემდეგი</button></Link>
 
             </div>
 

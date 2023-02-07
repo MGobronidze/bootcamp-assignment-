@@ -68,4 +68,34 @@ code {
     cursor: pointer;
 
   }
+.line-header{
+    position: absolute;
+    width: 798.000000000003px;
+    left: 150px;
+    top: 88px;
+    border-radius: 0px;
+    border: 1px solid #1A1A1A    
+  }
+.page-number{
+  height: 24px;
+  width: 29px;
+  left: 920px;
+  top: 34px;
+  font-family: Helvetica Neue;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #1A1A1A;
+  position: absolute;
+}
+.arrow{
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  left: 48px;
+  top: 45px;
+  border-radius: 0px;
+}
 

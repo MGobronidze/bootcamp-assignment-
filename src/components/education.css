@@ -15,15 +15,6 @@ h1{
     
 
 }
-.line-header{
-  position: absolute;
-  width: 798.000000000003px;
-  left: 150px;
-  top: 88px;
-  border: 1px solid #1A1A1A;
-  margin-top: 12px;
-
-}
   /* form styling */
   form{
     position: relative;

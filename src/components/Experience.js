@@ -1,5 +1,7 @@
 import React from "react";
-import "./experience.css"
+import { Link } from "react-router-dom";
+import "./experience.css";
+import arrow from './images/arrow.png'
 
 export default function Experience(){
     const [formData, setFormData]=React.useState({
@@ -31,7 +33,9 @@ export default function Experience(){
     return(
         <div className="container">
             <div className="form">
+                <Link to={'/'}> <img src={arrow} className="arrow" alt="here is arrow cklick to go to the first page"></img></Link>
                 <h1 className="header">გამოცდილება</h1>
+                <p className="page-number">3/3</p>
                 <div className="line-header"></div>
                 <form onSubmit={handleSubmit}>
                                 
@@ -101,8 +105,8 @@ export default function Experience(){
 
                 <div className="line-bottom"></div>
                 <button className="btn-add">მეტი გამოცდილების დამატება</button>
-                <button className="btn-back">უკან</button>
-                <button className="btn-next">შემდეგი</button>
+                <Link to={'/PriviteInfo'}><button className="btn-back">უკან</button></Link>
+                <Link to={'/Education'}><button className="btn-next">შემდეგი</button></Link>
 
             </div>
 

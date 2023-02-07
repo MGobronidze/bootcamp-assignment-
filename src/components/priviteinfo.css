@@ -12,17 +12,6 @@ h1{
   text-align: left;
 }
 
-
-
-.line-header{
-  margin-top: 8px;
-  position: absolute;
-  width: 798.000000000003px;
-  left: 150px;
-  top: 88px;
-  border: 1px solid #1A1A1A
-}
-  
   /* form styling */
   form{
     position: relative;
@@ -38,6 +27,7 @@ h1{
     width: 419px;
     border-radius: 0px;
     padding: 8px 24px 8px 24px;
+    background-color: #0E80BF;
   
   }
   .surname{
