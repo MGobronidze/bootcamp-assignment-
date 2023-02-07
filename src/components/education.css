@@ -145,7 +145,7 @@ textarea{
     top: 37px;
     border-radius: 4px;
     resize: none;
-    text-indent: 16px;
+    /* text-indent: 16px; */
     border: 1px solid #BCBCBC;
     color: #BCBCBC;
     background-color: #FFFFFF;

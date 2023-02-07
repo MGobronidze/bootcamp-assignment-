@@ -34,11 +34,14 @@ React.useEffect(()=>{
       event.preventDefault()
       console.log(formData)
     }
+    function handleClick(){
+      localStorage.clear()
+    }
     
     return(
         <div className="container">
             <div className="form">
-                <Link to={'/'}> <img src={arrow} className="arrow" alt="here is arrow cklick to go to the first page"></img></Link>
+                <Link to={'/'} onClick={handleClick}> <img src={arrow} className="arrow" alt="here is arrow cklick to go to the first page"></img></Link>
                 <h1 className="title">გამოცდილება</h1>
                 <p className="page-number">2/3</p>
                 <div className="line-header"></div>

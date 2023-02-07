@@ -141,8 +141,7 @@ textarea{
     border-radius: 4px;
     border: 1px solid #BCBCBC;
     resize: none;
-    text-indent: 16px;
-    
+    /* padding: 16px; */
 }
 .line-bottom-exp{ 
     position: absolute;
