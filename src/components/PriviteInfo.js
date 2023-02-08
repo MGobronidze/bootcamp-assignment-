@@ -5,6 +5,7 @@ import arrow from "./images/arrow.png";
 import logo from "./images/resume-logo.png";
 // import Resume from "./Resume";
 
+
 export default function PriviteInfo(){
     const [formData, setFormData] = React.useState(JSON.parse(localStorage.getItem("formData"))||{
         firstName:"",
@@ -134,6 +135,7 @@ React.useEffect(()=>{
                <Link to={'/Experience'}> <button className="btn-next" >შემდეგი</button> </Link>
 
             </div>
+            {/* <Resume /> */}
             <div className="resume">
                   <img src={logo} className="logo" alt="here is logo"></img>
             </div>

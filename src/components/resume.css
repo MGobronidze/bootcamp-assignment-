@@ -24,3 +24,103 @@
     top: 1048px;
     border-radius: 0px;
 }
+/* final resume page style */
+
+.resume-full-name{
+    display: flex;
+    left: 80px;
+    top: 68px;
+    position: absolute;
+}
+.resume-name, .resume-surname{
+
+    height: 42px;
+    font-family: Helvetica Neue;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: left;
+    color: #F93B1D;
+    padding-right: 20px;
+}
+.resume-email-container{
+    display: flex;
+    position: absolute;
+    top: 129px;
+    left: 81px;
+}
+.email-sign{
+    height: 20px;
+    width: 20px;
+    border-radius: 0px;
+    padding-right: 10px;
+}
+.resume-email{
+    height: 21px;
+    width: 187px;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+    
+}
+.resume-mobile-container{
+    display: flex;
+    position: absolute;
+    top: 159px;
+    left: 81px;
+}
+.resume-mobile-sign{
+    height: 20px;
+    width: 20px;
+    padding-right: 10px;
+}
+.resume-mobile{
+    height: 21px;
+    width: 151px;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+}
+.resume-aboutMe-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 80px;
+    top: 213px;
+     
+}
+.resume-aboutMe-header{
+    padding-bottom: 15px;
+    height: 22px;
+    width: 118px;
+    border-radius: nullpx;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #F93B1D;
+}
+.resume-aboutMe{
+    height: 72px;
+    width: 432px;
+    border-radius: nullpx;
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+}
+
+
