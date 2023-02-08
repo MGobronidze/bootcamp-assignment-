@@ -6,14 +6,36 @@ import logo from "./images/resume-logo.png"
 
 
 export default function Resume(){
-    function handleClick(){
+  function handleClick(){
         localStorage.clear()
-      }
-    return(
+  }
+  const formData = JSON.parse(localStorage.getItem("formData"))
+  return(
        <div>
         <Link to={'/'} onClick={handleClick}> <img src={arrow} className="arrow" alt="here is arrow cklick to go to the first page"></img></Link>
-        <div className="resume-final"></div>
+        <div className="resume-final">
+            <div className="resume-fill-name">
+                <div className="resume-name">{formData.firstName}</div>
+                <div className="resume-surname">{formData.lastName}</div>
+            </div>
+            <div className="resume-image">{formData.image}</div>
+            <div className="resume-email">{formData.email}</div>
+            <div className="resume-mobile">{formData.mobile}</div>
+            <div className="resume-aboutMe">{formData.aboutMe}</div>
+            <div className="resume-experience">
+                <div className="experience-position">{formData.position}</div>
+                <div className="experience-company">{formData.company}</div>
+                <div className="experience-dates">{formData.startDate} - {formData.endDate}</div>
+                <div className="experience-description">{formData.descriptionExp}</div>
+            </div>
+            <div className="resume-education">
+                <div className="education-school">{formData.school}</div>
+                <div className="education-degree">{formData.degree}</div>
+                <div className="education-date">{formData.endDate}</div>
+                <div className="education-description">{formData.description}</div>
+            </div>
+        </div>
         <img src={logo} className="logo-resume" alt="here is logo"></img>
        </div>
-    )
+   )
 }

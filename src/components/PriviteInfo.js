@@ -3,6 +3,7 @@ import './priviteinfo.css';
 import {Link } from "react-router-dom";
 import arrow from "./images/arrow.png";
 import logo from "./images/resume-logo.png";
+// import Resume from "./Resume";
 
 export default function PriviteInfo(){
     const [formData, setFormData] = React.useState(JSON.parse(localStorage.getItem("formData"))||{
@@ -134,7 +135,7 @@ React.useEffect(()=>{
 
             </div>
             <div className="resume">
-            <img src={logo} className="logo" alt="here is logo"></img>
+                  <img src={logo} className="logo" alt="here is logo"></img>
             </div>
         </div>
 
