@@ -2,11 +2,7 @@
     position: absolute;
     height: 1080px;
     width: 822px;
-    /* left: 549px;
-    top: 54px; */
     border-radius: 0px;
-    /* border: 0.8px solid #000000;
-    border: hidden; */
     background-color:#FFFFFF;
     color: #000000;
     font-family: Helvetica Neue;
@@ -18,14 +14,13 @@
 }
 
 .logo-resume{
-    position: absolute;
+    position: relative;
     height: 42px;
     width: 42px;
-    left: 627px;
-    top: 1048px;
+    left: 78px;
+    top: 994px;
     border-radius: 0px;
 }
-/* final resume page style */
 
 .resume-full-name{
     display: flex;

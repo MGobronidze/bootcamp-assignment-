@@ -40,12 +40,27 @@ React.useEffect(()=>{
     function handleClick(){
       localStorage.clear()
     }
-    const [focused, setFocused] = React.useState(false);
+    const [focusedScool, setFocusedScool] = React.useState(false);
     
-    const handleFocus = (e) => {
-      setFocused(true);
+    const handleFocusScool = (e) => {
+      setFocusedScool(true);
+    };
+    const [focusedDegree, setFocusedDegree] = React.useState(false);
+    
+    const handleFocusDegree = (e) => {
+      setFocusedDegree(true);
     };
    
+    const [focusedEnddate, setFocusedEnddate] = React.useState(false);
+    
+    const handleFocusEnddate = (e) => {
+      setFocusedEnddate(true);
+    };
+    const [focusedDescr, setFocusedDescr] = React.useState(false);
+    
+    const handleFocusDescr = (e) => {
+      setFocusedDescr(true);
+    };
     return(
         <div className="container">
             <div className="form">
@@ -66,8 +81,8 @@ React.useEffect(()=>{
                                             id="school"
                                             required = {true}
                                             pattern="^{2,}"
-                                            onBlur={handleFocus}
-                                            focused={focused.toString()}
+                                            onBlur={handleFocusScool}
+                                            focused={focusedScool.toString()}
                                         />
                                         <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
                                     </div>
@@ -83,10 +98,10 @@ React.useEffect(()=>{
                                                   onChange={handleChange}
                                                   name='degree'
                                                   required = "true"
-                                                  onBlur={handleFocus}
-                                                  focused={focused.toString()}  
-                                            >
-                                                  <option value=''>აირჩიეთ ხარისხი</option>
+                                                  onBlur={handleFocusDegree}
+                                                  focused={focusedDegree.toString()}  
+                                            >     
+                                                  <option value='d'>აირჩიეთ ხარისხი</option>
                                                   <option value='GeneralEducation'>ზოგადსაგანმანათლებლო დიპლომი</option>
                                                   <option value='Bachelor'>ბაკალავრი</option>
                                                   <option value='Master'>მაგისტრი</option>
@@ -112,8 +127,8 @@ React.useEffect(()=>{
                                                 value={formData.endDate}
                                                 id="endDate"
                                                 required = "true"
-                                                onBlur={handleFocus}
-                                                focused={focused.toString()}
+                                                onBlur={handleFocusEnddate}
+                                                focused={focusedEnddate.toString()}
 
                                             />
                                             <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
@@ -130,8 +145,8 @@ React.useEffect(()=>{
                                             value ={formData.description}
                                             id="description"
                                             required = "true"
-                                            onBlur={handleFocus}
-                                            focused={focused.toString()}
+                                            onBlur={handleFocusDescr}
+                                            focused={focusedDescr.toString()}
                                         />
                                         <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
                                       </div>

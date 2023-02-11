@@ -2,33 +2,32 @@ import React from "react";
 import './priviteinfo.css';
 import {Link } from "react-router-dom";
 import arrow from "./images/arrow.png";
-// import logo from "./images/resume-logo.png";
 // import valid from "./images/valid-icon.png";
 import invalid from "./images/invalid-icon.png";
 import Resume from "./Resume";
 
 
 export default function PriviteInfo(){
-    const [formData, setFormData] = React.useState(JSON.parse(localStorage.getItem("formData"))||{
+  const [formData, setFormData] = React.useState(
+    JSON.parse(localStorage.getItem("formData"))||{
         firstName:"",
         lastName:"",
         image: "",
         aboutMe: "",
         email:"",
         mobile:""
-      })
+   })
 
-    function handleClick(){
+  function handleClick(){
       localStorage.clear()
-    }
-  
+  }
 
-React.useEffect(()=>{
-  localStorage.setItem('formData', JSON.stringify(formData))
-}, [formData]);
+  React.useEffect(()=>{
+    localStorage.setItem('formData', JSON.stringify(formData))
+  }, [formData]);
  
 
-    function handleChange(event){
+  function handleChange(event){
       const {name, value}=event.target    
       setFormData(
         prevData => {
@@ -38,17 +37,30 @@ React.useEffect(()=>{
           }
         }
       )
-    }
-    function handleSubmit(event){
-      event.preventDefault()
-      console.log(formData)
-    }
+  }
     
-    const [focused, setFocused] = React.useState(false);
+  const [focusedName, setFocusedName] = React.useState(false);
     
-    const handleFocus = (e) => {
-      setFocused(true);
-    };
+  const handleFocusName = (e) => {
+      setFocusedName(true);
+  };
+  const [focusedSurName, setFocusedSurName] = React.useState(false);
+    
+  const handleFocusSurName = (e) => {
+      setFocusedSurName(true);
+  };
+  const [focusedEmail, setFocusedEmail] = React.useState(false);
+    
+  const handleFocusEmail = (e) => {
+      setFocusedEmail(true);
+  };
+  const [focusedMobile, setFocusedMobile] = React.useState(false);
+    
+  const handleFocusMobile = (e) => {
+      setFocusedMobile(true);
+  };
+
+
     return(
         <div className="container">
             <div className="form">
@@ -56,7 +68,7 @@ React.useEffect(()=>{
                 <h1 className="title">პირადი ინფო</h1>
                 <p className="page-number">1/3</p>
                 <div className="line-header"></div>
-                <form onSubmit={handleSubmit}>
+                <form>
                         <div className="ful-name">
                                 <div className="name">
                                     <label htmlFor="name">სახელი</label>
@@ -70,8 +82,8 @@ React.useEffect(()=>{
                                             id ="name"
                                             required = "true"
                                             pattern="^[ა-ჰ]{2,}"
-                                            onBlur={handleFocus}
-                                            focused={focused.toString()}
+                                            onBlur={handleFocusName}
+                                            focused={focusedName.toString()}
                                         />
                                       {/* <img src={valid} alt=" hare is validation icon"  className="valid-icon"/> */}
                                       <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
@@ -90,8 +102,8 @@ React.useEffect(()=>{
                                             id="surname"
                                             required = {true}
                                             pattern="^[ა-ჰ]{2,}"
-                                            onBlur={handleFocus}
-                                            focused={focused.toString()}
+                                            onBlur={handleFocusSurName}
+                                            focused={focusedSurName.toString()}
 
                                         />
                                         <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
@@ -141,8 +153,8 @@ React.useEffect(()=>{
                                               value={formData.email}
                                               required = "true"
                                               pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@redberry.ge"
-                                              onBlur={handleFocus}
-                                              focused={focused.toString()}
+                                              onBlur={handleFocusEmail}
+                                              focused={focusedEmail.toString()}
 
                                           />
                                           <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
@@ -161,9 +173,9 @@ React.useEffect(()=>{
                                               value={formData.mobile}
                                               id="mobile"
                                               required = "true"
-                                              pattern="^+9955[0-9]{8}$"
-                                              onBlur={handleFocus}
-                                              focused={focused.toString()}
+                                              pattern="^[\+ 0]0?995 \d{3} \d{2} \d{2} \d{2}$"
+                                              onBlur={handleFocusMobile}
+                                              focused={focusedMobile.toString()}
 
                                           />
                                           <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>

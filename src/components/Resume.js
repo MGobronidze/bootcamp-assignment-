@@ -23,9 +23,9 @@ export default function Resume(props){
         <div >
                 <Link to={'/'} onClick={handleClick}> <img src={arrow} className="arrow" alt="here is arrow cklick to go to the first page"></img></Link>
                 <div className="resume-final" style={styles}>
-                <div className="resume-full-name">
-                        <div className="resume-name">{formData.firstName}</div>
-                        <div className="resume-surname">{formData.lastName}</div>
+                {/* <div className="resume-full-name">
+                        {formData.firstName && <div className="resume-name">{formData.firstName}</div>}
+                        {formData.lastName && <div className="resume-surname">{formData.lastName}</div>}
                 </div>
                 <div className="resume-image">{formData.image}</div>
                 <div className="resume-email-container">
@@ -37,9 +37,9 @@ export default function Resume(props){
                         <div className="resume-mobile">{formData.mobile}</div>
                 </div>
                 <div className="resume-aboutMe-container">
-                        {formData.aboutMe &&<div className="resume-aboutMe-header"> ჩემს შესახებ </div>}
+                        {formData.aboutMe && <div className="resume-aboutMe-header"> ჩემს შესახებ </div>}
                         <div className="resume-aboutMe">{formData.aboutMe}</div> 
-                </div>
+                </div> */}
                 {/* <div className="resume-experience">
                         <div className="experience-position">{formData.position}</div>
                         <div className="experience-company">{formData.company}</div>
@@ -52,8 +52,9 @@ export default function Resume(props){
                         <div className="education-date">{formData.endDate}</div>
                         <div className="education-description">{formData.description}</div>
                 </div> */}
+                        <img src={logo} className="logo-resume" alt="here is logo"></img>
                 </div>
-                <img src={logo} className="logo-resume" alt="here is logo"></img>
+                
         </div>
    )
 }

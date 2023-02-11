@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./experience.css";
 import arrow from './images/arrow.png';
-// import logo from "./images/resume-logo.png";
 // import valid from "./images/valid-icon.png";
 import invalid from "./images/invalid-icon.png";
 import Resume from "./Resume";
@@ -40,13 +39,31 @@ React.useEffect(()=>{
     function handleClick(){
       localStorage.clear()
     }
-    const [focused, setFocused] = React.useState(false);
+    const [focusedPosition, setFocusedPosition] = React.useState(false);
     
-    const handleFocus = (e) => {
-      setFocused(true);
+    const handleFocusPosition = (e) => {
+      setFocusedPosition(true);
     };
-   
+    const [focusedCompany, setFocusedCompany] = React.useState(false);
     
+    const handleFocusCompany = (e) => {
+      setFocusedCompany(true);
+    };
+    const [focusedStart, setFocusedStart] = React.useState(false);
+    
+    const handleFocusStart = (e) => {
+      setFocusedStart(true);
+    };
+    const [focusedEnd, setFocusedEnd] = React.useState(false);
+    
+    const handleFocusEnd = (e) => {
+      setFocusedEnd(true);
+    };
+    const [focusedDesc, setFocusedDesc] = React.useState(false);
+    
+    const handleFocusDesc = (e) => {
+      setFocusedDesc(true);
+    };
     return(
         <div className="container">
             <div className="form">
@@ -69,8 +86,8 @@ React.useEffect(()=>{
                                               id="position"
                                               required = {true}
                                               pattern="^{2,}"
-                                              onBlur={handleFocus}
-                                              focused={focused.toString()}
+                                              onBlur={handleFocusPosition}
+                                              focused={focusedPosition.toString()}
 
                               
                                           />
@@ -91,8 +108,8 @@ React.useEffect(()=>{
                                             id="company"
                                             required = "true"
                                             pattern="^{2,}"
-                                            onBlur={handleFocus}
-                                            focused={focused.toString()}
+                                            onBlur={handleFocusCompany}
+                                            focused={focusedCompany.toString()}
 
                                         />
                                         <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
@@ -110,8 +127,8 @@ React.useEffect(()=>{
                                                 value={formData.startDate}
                                                 id="startDate"
                                                 required = "true"
-                                                onBlur={handleFocus}
-                                                focused={focused.toString()}
+                                                onBlur={handleFocusStart}
+                                                focused={focusedStart.toString()}
 
                                             />
                                             <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
@@ -130,8 +147,8 @@ React.useEffect(()=>{
                                             value={formData.endDate}
                                             id="endDate"
                                             required = "true"
-                                            onBlur={handleFocus}
-                                            focused={focused.toString()}
+                                            onBlur={handleFocusEnd}
+                                            focused={focusedEnd.toString()}
 
                                         />
                                         <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
@@ -149,8 +166,8 @@ React.useEffect(()=>{
                                                 value ={formData.descriptionExp}
                                                 id="descriptionExp"
                                                 required = "true"
-                                                onBlur={handleFocus}
-                                                focused={focused.toString()}
+                                                onBlur={handleFocusDesc}
+                                                focused={focusedDesc.toString()}
 
                                             />
                                             <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
