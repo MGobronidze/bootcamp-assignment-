@@ -2,7 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./experience.css";
 import arrow from './images/arrow.png';
-import logo from "./images/resume-logo.png";
+// import logo from "./images/resume-logo.png";
+// import valid from "./images/valid-icon.png";
+import invalid from "./images/invalid-icon.png";
+import Resume from "./Resume";
 
 export default function Experience(){
     const [formData, setFormData]=React.useState(JSON.parse(localStorage.getItem("formData"))||{
@@ -37,6 +40,12 @@ React.useEffect(()=>{
     function handleClick(){
       localStorage.clear()
     }
+    const [focused, setFocused] = React.useState(false);
+    
+    const handleFocus = (e) => {
+      setFocused(true);
+    };
+   
     
     return(
         <div className="container">
@@ -48,65 +57,104 @@ React.useEffect(()=>{
                 <form onSubmit={handleSubmit}>
                                 
                                 <div className="position">
+                                    
                                     <label htmlFor="position">თანამდებობდა</label>
-                                    <input
-                                        type="text"
-                                        placeholder='დეველოპერი, დიზაინერი, ა.შ.'
-                                        onChange={handleChange}
-                                        name ="position"
-                                        value={formData.position}
-                                        id="position"
-                        
-                                    />
+                                      <div className="validation">
+                                          <input
+                                              type="text"
+                                              placeholder='დეველოპერი, დიზაინერი, ა.შ.'
+                                              onChange={handleChange}
+                                              name ="position"
+                                              value={formData.position}
+                                              id="position"
+                                              required = {true}
+                                              pattern="^{2,}"
+                                              onBlur={handleFocus}
+                                              focused={focused.toString()}
+
+                              
+                                          />
+                                          <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
+                                      </div>
                                     <h5>მინიმუმ ორი სიმბოლო</h5>
                                 </div>
 
                                 <div className="company">
                                     <label htmlFor="company">დამსაქმებელი</label>
-                                    <input
-                                        type="text" 
-                                        placeholder='დამსაქმებელი'
-                                        onChange={handleChange}
-                                        name="company"
-                                        value={formData.company}
-                                        id="company"
-                                    />
+                                   <div className="validation"> 
+                                        <input
+                                            type="text" 
+                                            placeholder='დამსაქმებელი'
+                                            onChange={handleChange}
+                                            name="company"
+                                            value={formData.company}
+                                            id="company"
+                                            required = "true"
+                                            pattern="^{2,}"
+                                            onBlur={handleFocus}
+                                            focused={focused.toString()}
+
+                                        />
+                                        <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
+                                    </div>
                                     <h5>მინიმუმ ორი სიმბოლო</h5>
                                 </div>
                         <div className='date'>        
                                 <div className="start-date">
                                         <label htmlFor="startDate">დაწყების თარიღი</label>
-                                        <input 
-                                            type="date"
-                                            onChange={handleChange}
-                                            name="startDate"
-                                            value={formData.startDate}
-                                            id="startDate"
-                                        />
+                                        <div className="validation">
+                                            <input 
+                                                type="date"
+                                                onChange={handleChange}
+                                                name="startDate"
+                                                value={formData.startDate}
+                                                id="startDate"
+                                                required = "true"
+                                                onBlur={handleFocus}
+                                                focused={focused.toString()}
+
+                                            />
+                                            <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
+                                        
+                                        </div>
                                        
                                 </div>  
 
                                 <div className="end-date">
                                         <label htmlFor="endDate">დამთვრების თარიღი</label>
+                                       <div className="validation">
                                         <input 
                                             type="date"
                                             onChange={handleChange}
                                             name="endDate"
                                             value={formData.endDate}
                                             id="endDate"
+                                            required = "true"
+                                            onBlur={handleFocus}
+                                            focused={focused.toString()}
+
                                         />
+                                        <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
+                                        </div>
                                 </div>
                         </div>    
                                 
                                 <div className="description-exp">
                                         <label htmlFor="descriptionExp">აღწერა</label>
-                                        <textarea 
-                                            placeholder='როლი თანამდებობდაზე და ზოგადი აღწერა'
-                                            onChange={handleChange}
-                                            name="descriptionExp"
-                                            value ={formData.descriptionExp}
-                                            id="descriptionExp"
-                                        />
+                                        <div className="validation">
+                                            <textarea 
+                                                placeholder='როლი თანამდებობდაზე და ზოგადი აღწერა'
+                                                onChange={handleChange}
+                                                name="descriptionExp"
+                                                value ={formData.descriptionExp}
+                                                id="descriptionExp"
+                                                required = "true"
+                                                onBlur={handleFocus}
+                                                focused={focused.toString()}
+
+                                            />
+                                            <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
+                                        </div>
                                 </div>
                         
                 </form>
@@ -118,9 +166,7 @@ React.useEffect(()=>{
 
             </div>
 
-            <div className="resume">
-            <img src={logo} className="logo" alt="here is logo"></img>
-            </div>
+            <Resume left = "1089px" top= "0px"/>
         </div>
 
     )

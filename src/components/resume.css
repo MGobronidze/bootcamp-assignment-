@@ -2,10 +2,11 @@
     position: absolute;
     height: 1080px;
     width: 822px;
-    left: 549px;
-    top: 54px;
+    /* left: 549px;
+    top: 54px; */
     border-radius: 0px;
-    border: 0.8px solid #000000;
+    /* border: 0.8px solid #000000;
+    border: hidden; */
     background-color:#FFFFFF;
     color: #000000;
     font-family: Helvetica Neue;
@@ -122,5 +123,4 @@
     text-align: left;
     color: #000000;
 }
-
 

@@ -158,3 +158,23 @@ input[type="tel"]{
     width: 798px;
 }
 
+.validation{
+  display: flex;
+}
+
+.invalid-icon{
+  position: relative;
+  height: 18.752519607543945px;
+  width: 20.99802017211914px;
+  top: 15px;
+  left: 12px;
+  display: none;
+}
+/* .valid-icon{
+  position: relative;
+  top: 15px;
+  height: 16.5px;
+  width: 16.5px;
+  border-radius: 0px;
+ display: none;
+} */

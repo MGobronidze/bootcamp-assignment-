@@ -2,8 +2,10 @@ import React from "react";
 import './priviteinfo.css';
 import {Link } from "react-router-dom";
 import arrow from "./images/arrow.png";
-import logo from "./images/resume-logo.png";
-// import Resume from "./Resume";
+// import logo from "./images/resume-logo.png";
+// import valid from "./images/valid-icon.png";
+import invalid from "./images/invalid-icon.png";
+import Resume from "./Resume";
 
 
 export default function PriviteInfo(){
@@ -42,6 +44,11 @@ React.useEffect(()=>{
       console.log(formData)
     }
     
+    const [focused, setFocused] = React.useState(false);
+    
+    const handleFocus = (e) => {
+      setFocused(true);
+    };
     return(
         <div className="container">
             <div className="form">
@@ -53,27 +60,42 @@ React.useEffect(()=>{
                         <div className="ful-name">
                                 <div className="name">
                                     <label htmlFor="name">სახელი</label>
-                                    <input
-                                        type="text-priv"
-                                        placeholder='სახელი'
-                                        onChange={handleChange}
-                                        name="firstName"
-                                        value={formData.firstName}
-                                        id ="name"
-                        
-                                    />
+                                    <div className="validation">
+                                        <input
+                                            type="text-priv"
+                                            placeholder='სახელი'
+                                            onChange={handleChange}
+                                            name="firstName"
+                                            value={formData.firstName}
+                                            id ="name"
+                                            required = "true"
+                                            pattern="^[ა-ჰ]{2,}"
+                                            onBlur={handleFocus}
+                                            focused={focused.toString()}
+                                        />
+                                      {/* <img src={valid} alt=" hare is validation icon"  className="valid-icon"/> */}
+                                      <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
+                                    </div>
                                     <h5>მინიმუმ ორი ასო, ქართული ასოები</h5>
                                 </div>
                                 <div className="surname">
                                     <label htmlFor="surname">გვარი</label>
-                                    <input
-                                        type="text-priv" 
-                                        placeholder='გვარი'
-                                        onChange={handleChange}
-                                        name="lastName"
-                                        value={formData.lastName}
-                                        id="surname"
-                                    />
+                                   <div className="validation">
+                                        <input
+                                            type="text-priv" 
+                                            placeholder='გვარი'
+                                            onChange={handleChange}
+                                            name="lastName"
+                                            value={formData.lastName}
+                                            id="surname"
+                                            required = {true}
+                                            pattern="^[ა-ჰ]{2,}"
+                                            onBlur={handleFocus}
+                                            focused={focused.toString()}
+
+                                        />
+                                        <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
+                                    </div>
                                     <h5>მინიმუმ ორი ასო, ქართული ასოები</h5>
                                 
                         </div>
@@ -88,6 +110,10 @@ React.useEffect(()=>{
                                             accept="image/png, image/jpg, image/gif, image/jpeg"
                                             style={{display: 'none'}}
                                             id="image"
+                                            // required = "true"
+                                            // onBlur={handleFocus}
+                                            // focused={focused.toString()}
+
                                         />
                                         <button className="image-upload" >ატვირთვა</button>
                                 </div>
@@ -105,27 +131,44 @@ React.useEffect(()=>{
 
                                 <div className="email">
                                         <label htmlFor="email">ელ.ფოსტა</label>
-                                        <input
-                                            type="email" 
-                                            placeholder='Email'
-                                            onChange={handleChange}
-                                            name="email"
-                                            id="email"
-                                            value={formData.email}
-                                        />
+                                        <div className="validation">
+                                          <input
+                                              type="email" 
+                                              placeholder='Email'
+                                              onChange={handleChange}
+                                              name="email"
+                                              id="email"
+                                              value={formData.email}
+                                              required = "true"
+                                              pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@redberry.ge"
+                                              onBlur={handleFocus}
+                                              focused={focused.toString()}
+
+                                          />
+                                          <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
+                                        </div>
                                         <h5 className="restriction"> უნდა მთავრდებოდეს @redberry.ge-ით</h5>
                                 
                                 </div>
                                 <div className="mobile-number">
                                         <label htmlFor="mobile">მობილურის ნომერი</label>
-                                        <input 
-                                            type="tel"
-                                            placeholder ="შეიყვანეთ ტელეფონის ნომერი"
-                                            onChange={handleChange}
-                                            name="mobile"
-                                            value={formData.mobile}
-                                            id="mobile"
-                                        />
+                                       <div className="validation">
+                                          <input 
+                                              type="tel"
+                                              placeholder ="შეიყვანეთ ტელეფონის ნომერი"
+                                              onChange={handleChange}
+                                              name="mobile"
+                                              value={formData.mobile}
+                                              id="mobile"
+                                              required = "true"
+                                              pattern="^+9955[0-9]{8}$"
+                                              onBlur={handleFocus}
+                                              focused={focused.toString()}
+
+                                          />
+                                          <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
+                                    
+                                        </div>
                                         <h5 className="restriction"> უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს</h5>
 
                                 </div>
@@ -135,10 +178,9 @@ React.useEffect(()=>{
                <Link to={'/Experience'}> <button className="btn-next" >შემდეგი</button> </Link>
 
             </div>
-            {/* <Resume /> */}
-            <div className="resume">
-                  <img src={logo} className="logo" alt="here is logo"></img>
-            </div>
+            <Resume top="0px" 
+                    left="1089px" 
+                    />
         </div>
 
     )
