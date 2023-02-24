@@ -13,7 +13,7 @@ export default function Education(){
     const [formData, setFormData]=React.useState(JSON.parse(localStorage.getItem("formData"))||{
         school:"",
         degree:"",
-        endDate: "",
+        eduEndDate: "",
         description:""
       })
 React.useEffect(()=>{
@@ -51,10 +51,10 @@ React.useEffect(()=>{
       setFocusedDegree(true);
     };
    
-    const [focusedEnddate, setFocusedEnddate] = React.useState(false);
+    const [focusedEduEnddate, setFocusedEduEnddate] = React.useState(false);
     
-    const handleFocusEnddate = (e) => {
-      setFocusedEnddate(true);
+    const handleFocusEduEnddate = (e) => {
+      setFocusedEduEnddate(true);
     };
     const [focusedDescr, setFocusedDescr] = React.useState(false);
     
@@ -97,7 +97,7 @@ React.useEffect(()=>{
                                                   value={formData.degree}
                                                   onChange={handleChange}
                                                   name='degree'
-                                                  required = "true"
+                                                  required = {true}
                                                   onBlur={handleFocusDegree}
                                                   focused={focusedDegree.toString()}  
                                             >     
@@ -118,17 +118,17 @@ React.useEffect(()=>{
                                 </div>
                                   
                                 <div className="end-date">
-                                        <label htmlFor="endDate">დამთვრების თარიღი</label>
+                                        <label htmlFor="eduEndDate">დამთვრების თარიღი</label>
                                        <div className="validation">
                                             <input 
                                                 type="date"
                                                 onChange={handleChange}
-                                                name="endDate"
-                                                value={formData.endDate}
-                                                id="endDate"
-                                                required = "true"
-                                                onBlur={handleFocusEnddate}
-                                                focused={focusedEnddate.toString()}
+                                                name="eduEndDate"
+                                                value={formData.eduEndDate}
+                                                id="eduEndDate"
+                                                required = {true}
+                                                onBlur={handleFocusEduEnddate}
+                                                focused={focusedEduEnddate.toString()}
 
                                             />
                                             <img src={invalid} alt=" hare is validation icon" className="invalid-icon"/>
@@ -144,7 +144,7 @@ React.useEffect(()=>{
                                             name="description"
                                             value ={formData.description}
                                             id="description"
-                                            required = "true"
+                                            required = {true}
                                             onBlur={handleFocusDescr}
                                             focused={focusedDescr.toString()}
                                         />

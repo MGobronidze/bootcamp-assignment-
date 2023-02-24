@@ -80,7 +80,7 @@ export default function PriviteInfo(){
                                             name="firstName"
                                             value={formData.firstName}
                                             id ="name"
-                                            required = "true"
+                                            required = {true}
                                             pattern="^[ა-ჰ]{2,}"
                                             onBlur={handleFocusName}
                                             focused={focusedName.toString()}
@@ -151,7 +151,7 @@ export default function PriviteInfo(){
                                               name="email"
                                               id="email"
                                               value={formData.email}
-                                              required = "true"
+                                              required = {true}
                                               pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@redberry.ge"
                                               onBlur={handleFocusEmail}
                                               focused={focusedEmail.toString()}
@@ -172,7 +172,7 @@ export default function PriviteInfo(){
                                               name="mobile"
                                               value={formData.mobile}
                                               id="mobile"
-                                              required = "true"
+                                              required = {true}
                                               pattern="^[\+ 0]0?995 \d{3} \d{2} \d{2} \d{2}$"
                                               onBlur={handleFocusMobile}
                                               focused={focusedMobile.toString()}

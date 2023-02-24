@@ -106,7 +106,7 @@ React.useEffect(()=>{
                                             name="company"
                                             value={formData.company}
                                             id="company"
-                                            required = "true"
+                                            required = {true}
                                             pattern="^{2,}"
                                             onBlur={handleFocusCompany}
                                             focused={focusedCompany.toString()}
@@ -126,7 +126,7 @@ React.useEffect(()=>{
                                                 name="startDate"
                                                 value={formData.startDate}
                                                 id="startDate"
-                                                required = "true"
+                                                required = {true}
                                                 onBlur={handleFocusStart}
                                                 focused={focusedStart.toString()}
 
@@ -146,7 +146,7 @@ React.useEffect(()=>{
                                             name="endDate"
                                             value={formData.endDate}
                                             id="endDate"
-                                            required = "true"
+                                            required = {true}
                                             onBlur={handleFocusEnd}
                                             focused={focusedEnd.toString()}
 
@@ -165,7 +165,7 @@ React.useEffect(()=>{
                                                 name="descriptionExp"
                                                 value ={formData.descriptionExp}
                                                 id="descriptionExp"
-                                                required = "true"
+                                                required = {true}
                                                 onBlur={handleFocusDesc}
                                                 focused={focusedDesc.toString()}
 

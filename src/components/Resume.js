@@ -18,18 +18,35 @@ export default function Resume(props){
   function handleClick(){
         localStorage.clear()
   }
-  const formData = JSON.parse(localStorage.getItem("formData"))
-  return(
+  const formData = JSON.parse(localStorage.getItem("formData"))||{
+        firstName:"",
+        lastName:"",
+        image: "",
+        aboutMe: "",
+        email:"",
+        mobile:"",
+        position:"",
+        company:"",
+        startDate: "",
+        endDate: "",
+        descriptionExp:"",
+        school:"",
+        degree:"",
+        eduEndDate: "",
+        description:""
+  }
+
+ return(
         <div >
                 <Link to={'/'} onClick={handleClick}> <img src={arrow} className="arrow" alt="here is arrow cklick to go to the first page"></img></Link>
                 <div className="resume-final" style={styles}>
-                {/* <div className="resume-full-name">
-                        {formData.firstName && <div className="resume-name">{formData.firstName}</div>}
-                        {formData.lastName && <div className="resume-surname">{formData.lastName}</div>}
+                <div className="resume-full-name">
+                        <div className="resume-name">{formData.firstName}</div>
+                        <div className="resume-surname">{formData.lastName}</div>
                 </div>
                 <div className="resume-image">{formData.image}</div>
                 <div className="resume-email-container">
-                        {formData.email && <div className="email-sign"><img src={email} alt="here is email symbol"/></div>}
+                        {formData.email&&<div className="email-sign"><img src={email} alt="here is email symbol"/></div>}
                         <div className="resume-email">{formData.email}</div>
                 </div>
                 <div className="resume-mobile-container">
@@ -39,7 +56,7 @@ export default function Resume(props){
                 <div className="resume-aboutMe-container">
                         {formData.aboutMe && <div className="resume-aboutMe-header"> ჩემს შესახებ </div>}
                         <div className="resume-aboutMe">{formData.aboutMe}</div> 
-                </div> */}
+                </div>
                 {/* <div className="resume-experience">
                         <div className="experience-position">{formData.position}</div>
                         <div className="experience-company">{formData.company}</div>
